@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>TV Critic</title>
+		<link rel="stylesheet" href="/style.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+	</head>
+
+	<body>
+	<% for comment in @results %>
+		<div class="row">
+			<div class="rating">
+				<h2><%= comment.rating %></h2>
+			</div>
+			<div class="comment">
+				<p><%= comment.text %></p>
+			</div>
+		</div>
+	<% end %>
+
+	<script src="/rating-colours.js"></script>
+
+	</body>
+</html>

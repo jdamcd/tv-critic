@@ -1,0 +1,1 @@
+This is a tiny Sinatra app to generate an HTML page of Android app reviews from Google Play. The output is intended to be displayed on a TV as an information radiator.

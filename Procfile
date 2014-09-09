@@ -1,0 +1,1 @@
+web: ./bin/bundle exec ruby critic.rb

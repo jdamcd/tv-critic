@@ -1,0 +1,36 @@
+h2 {
+	font-size: 48pt;
+	font-family: Helvetica, sans-serif;
+	text-align: center;
+}
+
+p {
+	font-family: Helvetica, sans-serif;
+	font-size: 18pt;
+}
+
+body {
+	background: #333;
+}
+
+.row {
+	margin: 0.5%;
+	border: 2px solid white;
+	overflow: hidden;
+	width: 48.5%;
+	float: left;
+}
+
+.rating {
+	color: white;
+	width: 70px;
+	padding: 0 10px 0 10px;
+	border-right: 2px solid white;
+	float:left;
+}
+
+.comment {
+	color: white;
+	margin: 0 20px 0 110px;
+	height: 0px;
+}
