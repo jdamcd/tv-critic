@@ -1,1 +1,1 @@
-web: ./bin/bundle exec ruby critic.rb
+web: bundle exec ruby critic.rb
