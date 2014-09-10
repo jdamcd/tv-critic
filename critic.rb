@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'supermarket'
 
+configure do
+	set :protection, :except => :frame_options
+end
+
 before do
 	@session = Supermarket::Session.new
 end
