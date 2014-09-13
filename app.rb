@@ -6,7 +6,8 @@ configure do
 end
 
 before do
-	@session = Supermarket::Session.new
+	opts = {'login' => ENV["GOOGLE_LOGIN"], 'password' => ENV["GOOGLE_PASSWORD"]}
+	@session = Supermarket::Session.new(opts)
 end
 
 get '/tv/:app_id' do |app_id|
