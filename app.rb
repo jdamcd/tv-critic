@@ -25,15 +25,28 @@ get '/android/:app_id' do |app_id|
 	session = Supermarket::Session.new(opts)
 	
 	@results = session.comments(app_id, 0, 10).comments_list.to_a.map { |c| Comment.new(c.text, c.rating) }
-	erb :comments
+	if @results.size > 0
+		erb :comments
+	else
+		no_results
+	end
 end
 
 get '/ios/:app_id' do |app_id|
-	response = Net::HTTP.get("itunes.apple.com", "/us/rss/customerreviews/id=" + app_id + "/json")
+	response = Net::HTTP.get("itunes.apple.com", "/us/rss/customerreviews/mostRecent/id=" + app_id + "/json")
 	reviews = JSON.parse(response)["feed"]["entry"]
 
-	@results = reviews[1,10].map { |r| Comment.new(r["content"]["label"], r["im:rating"]["label"]) }
-	erb :comments
+	begin
+		@results = reviews[1,10].map { |r| Comment.new(r["content"]["label"], r["im:rating"]["label"]) }
+		erb :comments
+	rescue
+		no_results
+	end
+end
+
+def no_results 
+	cache_control :no_cache, :max_age => 0
+	erb :no_results
 end
 
 class Comment
