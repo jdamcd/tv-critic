@@ -4,7 +4,7 @@ require 'net/http'
 
 require 'rack-cache'
 require 'dalli'
-require 'memcachier' 
+require 'memcachier'
 
 configure do
 	set :protection, :except => :frame_options
@@ -23,7 +23,8 @@ end
 get '/android/:app_id' do |app_id|
 	opts = {'login' => ENV["GOOGLE_LOGIN"], 'password' => ENV["GOOGLE_PASSWORD"]}
 	session = Supermarket::Session.new(opts)
-	
+
+	@store_name = 'Android'
 	@results = session.comments(app_id, 0, 10).comments_list.to_a.map { |c| Comment.new(c.text, c.rating) }
 	if @results.size > 0
 		erb :comments
@@ -36,6 +37,7 @@ get '/ios/:app_id' do |app_id|
 	response = Net::HTTP.get("itunes.apple.com", "/us/rss/customerreviews/mostRecent/id=" + app_id + "/json")
 	reviews = JSON.parse(response)["feed"]["entry"]
 
+	@store_name = 'iOS'
 	begin
 		@results = reviews[1,10].map { |r| Comment.new(r["content"]["label"], r["im:rating"]["label"]) }
 		erb :comments
@@ -44,7 +46,7 @@ get '/ios/:app_id' do |app_id|
 	end
 end
 
-def no_results 
+def no_results
 	cache_control :no_cache, :max_age => 0
 	erb :no_results
 end
