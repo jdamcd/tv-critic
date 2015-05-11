@@ -2,12 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>TV Critic</title>
+		<title>TV Critic - <%= @store_name %></title>
 		<link rel="stylesheet" href="/style.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 	</head>
 
 	<body>
+	<h1><%= @store_name %> Comments</h1>
 	<% for comment in @results %>
 		<div class="row">
 			<div class="rating">
