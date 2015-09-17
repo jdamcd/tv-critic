@@ -17,6 +17,10 @@ This is a tiny Sinatra app to generate an HTML page of Android/iOS app reviews. 
 
 `/ios/:app_id` e.g. `/ios/336353151`
 
+## How does it look?
+
+![TV Critic screenshot](screenshot.png)
+
 ## License
 
     Copyright 2015 Jamie McDonald
