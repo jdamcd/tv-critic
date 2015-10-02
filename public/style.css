@@ -1,39 +1,45 @@
+@font-face {
+  font-family: 'RobotoRegular';
+  src: url('../Roboto-Regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 h1 {
 	color: white;
-	font-family: Helvetica, sans-serif;
 	text-align: center;
 	margin: 5px 0;
+	font-family: RobotoRegular;
 }
 
 h2 {
 	color: white;
-	font-size: 48pt;
-	font-family: Helvetica, sans-serif;
+	font-size: 46pt;
 	text-align: center;
+	font-family: RobotoRegular;
 }
 
 p {
 	color: white;
-	font-family: Helvetica, sans-serif;
-	font-size: 18pt;
+	font-size: 17pt;
+	font-family: RobotoRegular;
 }
 
 body {
-	background: #333;
+	background: #000;
 }
 
 .row {
 	margin: 0.5%;
-	border: 2px solid white;
 	overflow: hidden;
 	width: 48.5%;
 	float: left;
+	background: #333;
 }
 
 .rating {
 	width: 70px;
 	padding: 0 10px 0 10px;
-	border-right: 2px solid white;
 	float:left;
 }
 

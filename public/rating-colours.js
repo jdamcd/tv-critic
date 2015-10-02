@@ -8,19 +8,19 @@ for (var i = 0, max = elements.length; i < max; i++) {
 function setColourByRating(element, rating) {
 	switch (rating) {
 		case 1:
-			setColour(element, '#d99068');
+			setColour(element, '#EF5350');
 			break;
 		case 2:
-			setColour(element, '#e4b152');
+			setColour(element, '#FFA726');
 			break;
 		case 3:
-			setColour(element, '#f0d356');
+			setColour(element, '#FBC02D');
 			break;
 		case 4:
-			setColour(element, '#becd4c');
+			setColour(element, '#9CCC65');
 			break;
 		case 5:
-			setColour(element, '#7fb863');
+			setColour(element, '#4CAF50');
 	}
 } 
 
