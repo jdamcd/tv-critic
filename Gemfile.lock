@@ -2,7 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     dalli (2.7.2)
-    json (1.5.0)
     json (1.5.0-java)
     json-jruby (1.5.0-java)
       json (= 1.5.0)
@@ -30,3 +29,6 @@ DEPENDENCIES
   rack-cache
   sinatra
   supermarket
+
+BUNDLED WITH
+   1.10.6
