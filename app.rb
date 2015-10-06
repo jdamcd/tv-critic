@@ -25,6 +25,7 @@ get '/android/:app_id' do |app_id|
 	session = Supermarket::Session.new(opts)
 
 	@store_name = 'Android'
+	@app_id = app_id
 	@results = session.comments(app_id, 0, 10).comments_list.to_a.map { |c| Comment.new(c.text, c.rating) }
 	if @results.size > 0
 		erb :comments
@@ -38,6 +39,7 @@ get '/ios/:app_id' do |app_id|
 	reviews = JSON.parse(response)["feed"]["entry"]
 
 	@store_name = 'iOS'
+	@app_id = app_id
 	begin
 		@results = reviews[1,10].map { |r| Comment.new(r["content"]["label"], r["im:rating"]["label"]) }
 		erb :comments
