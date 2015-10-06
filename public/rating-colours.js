@@ -11,10 +11,10 @@ function setColourByRating(element, rating) {
 			setColour(element, '#EF5350');
 			break;
 		case 2:
-			setColour(element, '#FFA726');
+			setColour(element, '#FF7043');
 			break;
 		case 3:
-			setColour(element, '#FBC02D');
+			setColour(element, '#FFB300');
 			break;
 		case 4:
 			setColour(element, '#9CCC65');
